@@ -46,6 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.label8 = new System.Windows.Forms.Label();
             this.Compare_Files_Btn = new System.Windows.Forms.Button();
             this.Compare_Result = new System.Windows.Forms.TextBox();
@@ -71,7 +72,6 @@
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Result:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Calculate_Button
             // 
@@ -223,7 +223,6 @@
             this.label2.Size = new System.Drawing.Size(95, 13);
             this.label2.TabIndex = 11;
             this.label2.Text = "2. Select Algorithm";
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // tabPage2
             // 
@@ -244,6 +243,13 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Compare";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(20, 416);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(652, 23);
+            this.progressBar.TabIndex = 28;
             // 
             // label8
             // 
@@ -305,7 +311,6 @@
             this.label5.Size = new System.Drawing.Size(200, 13);
             this.label5.TabIndex = 16;
             this.label5.Text = "2. Choose Second File to perform check.";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // Browse_F1_button
             // 
@@ -350,7 +355,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 431);
+            this.ClientSize = new System.Drawing.Size(684, 451);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.About);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -395,6 +401,7 @@
         private System.Windows.Forms.TextBox Compare_Result;
         private System.Windows.Forms.Button About;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }
 
