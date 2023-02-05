@@ -46,7 +46,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.label8 = new System.Windows.Forms.Label();
             this.Compare_Files_Btn = new System.Windows.Forms.Button();
             this.Compare_Result = new System.Windows.Forms.TextBox();
@@ -56,7 +55,10 @@
             this.Browse_F1_button = new System.Windows.Forms.Button();
             this.File1_textBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.About = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.CopyToClipboardButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -103,6 +105,7 @@
             // radioBtn_MD5
             // 
             this.radioBtn_MD5.AutoSize = true;
+            this.radioBtn_MD5.Checked = true;
             this.radioBtn_MD5.Location = new System.Drawing.Point(226, 88);
             this.radioBtn_MD5.Margin = new System.Windows.Forms.Padding(2);
             this.radioBtn_MD5.Name = "radioBtn_MD5";
@@ -121,12 +124,12 @@
             this.radioBtn_SHA1.Name = "radioBtn_SHA1";
             this.radioBtn_SHA1.Size = new System.Drawing.Size(53, 17);
             this.radioBtn_SHA1.TabIndex = 5;
-            this.radioBtn_SHA1.TabStop = true;
             this.radioBtn_SHA1.Text = "SHA1";
             this.radioBtn_SHA1.UseVisualStyleBackColor = true;
             // 
             // Browse_button
             // 
+            this.Browse_button.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Browse_button.Location = new System.Drawing.Point(542, 56);
             this.Browse_button.Name = "Browse_button";
             this.Browse_button.Size = new System.Drawing.Size(75, 23);
@@ -155,7 +158,6 @@
             this.radioBtn_SHA256.Name = "radioBtn_SHA256";
             this.radioBtn_SHA256.Size = new System.Drawing.Size(65, 17);
             this.radioBtn_SHA256.TabIndex = 8;
-            this.radioBtn_SHA256.TabStop = true;
             this.radioBtn_SHA256.Text = "SHA256";
             this.radioBtn_SHA256.UseVisualStyleBackColor = true;
             // 
@@ -167,7 +169,6 @@
             this.radioBtn_SHA512.Name = "radioBtn_SHA512";
             this.radioBtn_SHA512.Size = new System.Drawing.Size(65, 17);
             this.radioBtn_SHA512.TabIndex = 10;
-            this.radioBtn_SHA512.TabStop = true;
             this.radioBtn_SHA512.Text = "SHA512";
             this.radioBtn_SHA512.UseVisualStyleBackColor = true;
             // 
@@ -184,6 +185,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.CopyToClipboardButton);
+            this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.radioBtn_SHA512);
@@ -243,13 +246,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Compare";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // progressBar
-            // 
-            this.progressBar.Location = new System.Drawing.Point(20, 416);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(652, 23);
-            this.progressBar.TabIndex = 28;
             // 
             // label8
             // 
@@ -341,6 +337,13 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "1. Choose First File to perform check.";
             // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(20, 416);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(652, 23);
+            this.progressBar.TabIndex = 28;
+            // 
             // About
             // 
             this.About.Location = new System.Drawing.Point(614, 6);
@@ -350,6 +353,26 @@
             this.About.Text = "About";
             this.About.UseVisualStyleBackColor = true;
             this.About.Click += new System.EventHandler(this.About_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(223, 167);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(195, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Hashing large files may take some time..";
+            // 
+            // CopyToClipboardButton
+            // 
+            this.CopyToClipboardButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.CopyToClipboardButton.Location = new System.Drawing.Point(513, 231);
+            this.CopyToClipboardButton.Name = "CopyToClipboardButton";
+            this.CopyToClipboardButton.Size = new System.Drawing.Size(75, 23);
+            this.CopyToClipboardButton.TabIndex = 14;
+            this.CopyToClipboardButton.Text = "Copy";
+            this.CopyToClipboardButton.UseVisualStyleBackColor = true;
+            this.CopyToClipboardButton.Click += new System.EventHandler(this.CopyButtonClick);
             // 
             // Form1
             // 
@@ -402,6 +425,8 @@
         private System.Windows.Forms.Button About;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.Button CopyToClipboardButton;
+        private System.Windows.Forms.Label label6;
     }
 }
 

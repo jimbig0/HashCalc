@@ -20,11 +20,12 @@ namespace HelloWorld
         private void button1_Click(object sender, EventArgs e)
         {
             string filepath = Input_textbox.Text;
-            progressBar.Value = 5;
+            progressBar.Value = 1;
             if (radioBtn_MD5.Checked == true)
             {
                 // Calculate Hash using MD5 Algorithm
                 Console.WriteLine("MD5 Selected");
+                progressBar.Value = 5;
                 Console.WriteLine(ChecksumUtil.GetChecksum(HashingAlgoTypes.MD5, filepath));
                 Result_textbox.Text = ChecksumUtil.GetChecksum(HashingAlgoTypes.MD5, filepath);
                 progressBar.Value = 100;
@@ -34,6 +35,7 @@ namespace HelloWorld
             {
                 // Calculate Hash using SHA1 Algorithm
                 Console.WriteLine("SHA1 Selected");
+                progressBar.Value = 5;
                 Console.WriteLine(ChecksumUtil.GetChecksum(HashingAlgoTypes.SHA1, filepath));
                 Result_textbox.Text = ChecksumUtil.GetChecksum(HashingAlgoTypes.SHA1, filepath);
                 progressBar.Value = 100;
@@ -43,6 +45,7 @@ namespace HelloWorld
             {
                 // Calculate Hash using SHA256 Algorithm
                 Console.WriteLine("SHA256 Selected");
+                progressBar.Value = 5;
                 Console.WriteLine(ChecksumUtil.GetChecksum(HashingAlgoTypes.SHA256, filepath));
                 Result_textbox.Text = ChecksumUtil.GetChecksum(HashingAlgoTypes.SHA256, filepath);
                 progressBar.Value = 100;
@@ -51,6 +54,7 @@ namespace HelloWorld
             else if (radioBtn_SHA512.Checked == true)
             {
                 Console.WriteLine("SHA512 Selected");
+                progressBar.Value = 5;
                 Console.WriteLine(ChecksumUtil.GetChecksum(HashingAlgoTypes.SHA512, filepath));
                 Result_textbox.Text = ChecksumUtil.GetChecksum(HashingAlgoTypes.SHA512, filepath);
                 progressBar.Value = 100;
@@ -199,6 +203,11 @@ namespace HelloWorld
             }
             
 
+        }
+
+        private void CopyButtonClick(object sender, EventArgs e)
+        {
+            Clipboard.SetText(Result_textbox.Text);
         }
     }
 }
